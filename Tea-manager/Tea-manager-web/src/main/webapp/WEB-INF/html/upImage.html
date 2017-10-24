@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>图片上传</title>
+</head>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/underscore.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  function rem(){
+    $.get('removeImage?id=29',function(data){
+        alert(data);
+    });
+  }
+</script>
+<body>
+<h2>上传多个图片</h2>
+<form action="TeaImageUp" method="post" name="Image" enctype="multipart/form-data">
+  <p>
+    选择图片:<input type="file" name="files" multiple>
+  </p>
+<p>
+  <input type="submit" value="提交上传"/>
+</p>
+</form>
+<p>
+  删除图片:<input type="button" onclick="rem();" value="删除"/>
+</p>
+</body>
+</html>

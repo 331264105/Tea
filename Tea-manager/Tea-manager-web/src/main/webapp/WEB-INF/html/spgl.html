@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <style>
+        .hide{
+            display: none !important;
+        }
+        .img-cont{
+            width:840px;
+            height: 320PX;
+            border: 1PX solid skyblue;
+        }
+    </style>
+<body>
+    <h2>商品上传</h2>
+    <form id="addform" action="addTeaNew" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>商品的信息的上传</td>
+            </tr>
+            <tr>
+                <td>
+                    新闻名称:<input class="ip1" type="text" name="name"/>
+                </td>
+            </tr>
+            <tr><td>
+                内容:<input  class="ip2" type="text" name="text"/>
+            </td></tr>
+            <tr><td>
+                新闻标题:<input  class="ip3" type="text" name="title"/>
+            </td></tr>
+            <tr><td>
+                上传图片:<input class="img" type="file" name="files"/>
+            </td></tr>
+            <tr><td>
+                <button type="button" id="submit">上传</button>
+            </td></tr>
+        </table>
+    </form>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script>
+        $("#submit").click(function(){
+            var options  = {
+                url:"addTeaNew",   //同action
+                type:'post',
+                dataType: 'json',
+                success:function(data)
+                {
+                    console.log(data)
+                },
+                error :function(data)
+                {
+                    console.log(1)
+                    console.log(data)
+                },
+            };
+            console.log($(".ip1").val())
+            if (($(".ip1").val())&($(".ip2").val())) {
+                console.log(1);
+                $("#addform").ajaxSubmit(options);
+                location.href='spglimg1.html';
+                alert('请继续上传商品轮播图片')
+            }else{
+                
+                alert('上传失败哦！请检查输入内容')
+            }
+            // if($(".ip1").val()&$(".ip2").val()||$(".ip3").val()||$(".img").val()){
+            //     $("#addform").ajaxSubmit(options);
+            // }else{
+            //     alert("请检查输入内容")
+            // }
+        });
+    </script>
+   
+</body>
+</html>

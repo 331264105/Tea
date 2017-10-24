@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+	<form action="ImageUp" method="post" name="Image" enctype="multipart/form-data" onsubmit="return toImage()">
+       	<input type="file" id='file'; onchange="c()">
+		<img src="" id='show'>
+    </form>
+</body>
+<script type="text/javascript">
+function c () {
+	var r= new FileReader();
+		f=document.getElementById('file').files[0];
+		r.readAsDataURL(f);
+		r.onload=function  (e) {
+		document.getElementById('show').src=this.result;
+		};
+	}
+
+function toImage(){
+	console.log(document.getElementById('file').value)
+}
+</script>
+</html>

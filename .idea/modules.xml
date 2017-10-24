@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Tea-common/Tea-common.iml" filepath="$PROJECT_DIR$/Tea-common/Tea-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tea-manager/Tea-manager.iml" filepath="$PROJECT_DIR$/Tea-manager/Tea-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tea-manager/Tea-manager-dao/Tea-manager-dao.iml" filepath="$PROJECT_DIR$/Tea-manager/Tea-manager-dao/Tea-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tea-manager/Tea-manager-domain/Tea-manager-domain.iml" filepath="$PROJECT_DIR$/Tea-manager/Tea-manager-domain/Tea-manager-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tea-manager/Tea-manager-service/Tea-manager-service.iml" filepath="$PROJECT_DIR$/Tea-manager/Tea-manager-service/Tea-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tea-manager/Tea-manager-serviceImpl/Tea-manager-serviceImpl.iml" filepath="$PROJECT_DIR$/Tea-manager/Tea-manager-serviceImpl/Tea-manager-serviceImpl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tea-manager/Tea-manager-web/Tea-manager-web.iml" filepath="$PROJECT_DIR$/Tea-manager/Tea-manager-web/Tea-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tea-parent/Tea-parent.iml" filepath="$PROJECT_DIR$/Tea-parent/Tea-parent.iml" />
+    </modules>
+  </component>
+</project>

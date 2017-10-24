@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>主页面</title>
+  <style>
+  		*{
+  			margin: 0px;
+  			padding: 0px;
+  		}
+  		body{
+  			width: 100%;
+  			height: 100%;
+  			background: url('');
+  		}
+  		header{
+  			width: 100%;
+  			height: 60px;
+  		}
+		nav{
+			width: 100%;
+			height: 600px;
+		}
+		nav .nav-left{
+			float: left;
+			width: 10%;
+			height: 100%;
+			margin-left: 20px;	
+		}
+		nav .nav-left1{
+			width: 10%;
+			min-width: 1400px;
+		}
+		nav .nav-left .left1{
+			text-align: center;
+			line-height: 60px; 
+			height: 80px;
+			width: 100%
+		}
+		nav .nav-left .left1 a{
+			color: black;
+			font-size: 20px;
+			text-decoration: none;
+		}
+		iframe{
+			float: left;
+		}
+		nav .nav-right{
+			float: right;
+			width: 15%;
+			height: 100%;
+		}
+		footer .footer{
+			font-size: 15px;
+			line-height: 120px;
+			text-align: center;
+			color: white;
+		}
+  </style>
+	<script>
+		function ifrm(canshu){
+			document.getElementById('iframe').src = canshu;
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h4>帝都网络科技</h4>
+	</header>
+	<nav>
+		<div class="nav-left">
+			<div class="left1"> </div>
+			<div class="left1">
+				<a href="#" id="shouye.html" onclick="ifrm(this.id)">首页</a>
+			</div>
+			<div class="left1">
+				<a href="#" id="txl/txl.html" onclick="ifrm(this.id)">咨询页</a>
+			</div>		
+			<div class="left1">
+				<a href="#" id="liuyan/liuyan.html" onclick="ifrm(this.id)">商品管理</a>
+			</div>	
+			<div class="left1">
+				<a href="#" id="lts/room.html" onclick="ifrm(this.id)">客户</a>
+			</div>	
+			<div class="left1">
+				<a href="#" id="wjsc/shangchuan.html" onclick="ifrm(this.id)" >客户</a>
+			</div>
+			<div class="left1">
+				<a href="#" id="yule/yule.html" onclick="ifrm(this.id)" >客户</a>
+			</div>		
+		</div>
+			<!-- 中间框架 -->
+		<iframe id="iframe" src="shouye.html"  width="65%" height="600" frameborder="0" style="background-color: white; opacity: 0.86;font-family:myFirstFont;"></iframe>
+		<div class="nav-right">
+			<img src="" alt="">
+		</div>
+	</nav>
+	
+	<!-- <footer>
+		<div class="footer">
+			@ 我们自己| 我们自己 | 我们自己 | 我们自己 |
+		</div>
+	</footer> -->
+
+</body>
+</html>

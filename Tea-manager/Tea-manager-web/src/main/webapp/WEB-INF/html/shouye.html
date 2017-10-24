@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>帝都网络</title>
+    <style>
+    	.img-cont{
+    		width: 400px;
+    		height: 200px;
+    		border: 1px solid skyblue;
+    	}
+        .name{
+            margin: 0 auto;
+            width: 300px;
+        }
+        th,td{
+            border:1px solid black;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        td img{
+            width: 100px;
+            height: 80px;
+        }
+        nav{
+        	width: 100%;
+        	height: 100%;
+        }
+        nav .top{
+        	width: 300px;
+        	height: 50px;
+        	text-align: center;
+        	margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<table class="name">
+    <tr>
+        <th>图片</th>
+        <th><button id="button">删除</button></th>
+        <th><button id="button1">修改</button></th>
+    </tr>
+</table>
+<script type="text/template" id="template">
+    <tr >
+        <td><img src="Image/<%=name%>" alt=""></td>
+        <td><input type="button" class="button" value="删除"></td>
+        <td><input type="button" class="button1" value="修改"></td>
+    </tr>
+</script>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/underscore.js"></script>
+<script>
+    var templateStr = $('#template').html();
+    var compile = _.template(templateStr);
+    var array = [];
+    var userbianhao = localStorage.getItem('bianhao');
+    anli();
+    function anli() {
+        $.get('queryImage',function(data){
+            var obj =data;
+            console.log(obj);
+            $(obj).each(function(i){
+                var dictionary = obj[i];
+                var domstr = compile(dictionary);
+                console.log(domstr);
+                $('.name').append($(domstr));
+                array.push(dictionary.id);
+            });
+            $('.button').each(function(i){
+                $(this).click(function(){
+                    var aa = array[i];
+                    var that = $(this);
+                    console.log(aa);
+                    if(confirm("确定要删除吗？")){
+                        $.get('removeImage',{'id':aa},function(data){
+                            console.log(data);
+                            if(data == 'true'){
+                                that.parent().parent().remove();
+                            }else{
+                                alert('删除失败');
+                            }
+                        });
+                    }
+                });
+            });
+            $('.button1').each(function(i){
+                $(this).click(function(){
+                    var aa = array[i];
+                    var that = $(this);
+                    console.log(aa);
+                    if(confirm("确定要修改吗？")){
+
+                    }
+                });
+            });
+
+        });
+    }
+</script>
+</body>
+</html>
